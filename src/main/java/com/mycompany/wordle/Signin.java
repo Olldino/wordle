@@ -115,6 +115,13 @@ public class Signin extends javax.swing.JFrame {
         
         String user = jTextField1.getText();
         String pwd = jTextField2.getText();
+        
+        this.dispose();
+        Start start = new Start();
+        start.setVisible(true);
+        
+       
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed

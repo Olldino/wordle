@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.mycompany.Wordle.leaderboard" table="leaderboard">
+    <class name="com.mycompany.wordle.leaderboard" table="leaderboard">
         <id name="boardid" type="int">
             <column name="BOARDID" />
             <generator class="increment" />
@@ -19,7 +19,7 @@
             <key>
                 <column name="boardid" not-null="true"></column>
             </key>
-            <one-to-many class="com.mycompany.Wordle.userdaten"/>
+            <one-to-many class="com.mycompany.wordle.userdaten"/>
         </set>
     </class>
 </hibernate-mapping>

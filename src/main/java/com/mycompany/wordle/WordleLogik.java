@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 public class WordleLogik {
 
-    Wordledatenbank wd = new Wordledatenbank();
+    
 
     public boolean FelderÜberprüfen(JTextField[][] Spielfeld, int row) {
 
