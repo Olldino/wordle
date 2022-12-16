@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mycompany.Wordle.userdaten" table="userdaten">
+        <id name="userid" type="int">
+            <column name="USERID" />
+            <generator class="increment" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="pwd" type="java.lang.String">
+            <column name="PWD" />
+        </property>
+        <set name="userdatenSet" table="userdaten" fetch="select" lazy="false">        
+            <key>
+                <column name="userid" not-null="true"></column>
+            </key>
+            <one-to-many class="com.mycompany.Wordle.leaderboard"/>
+        </set>
+    </class>
+</hibernate-mapping>

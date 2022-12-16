@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mycompany.Wordle.leaderboard" table="leaderboard">
+        <id name="boardid" type="int">
+            <column name="BOARDID" />
+            <generator class="increment" />
+        </id>
+        <property name="points" type="int">
+            <column name="POINTS"/>
+        </property>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="position" type="int">
+                <column name="POSITION" />
+        </property>
+        <set name="leaderboardSet" table="leaderboard" fetch="select" lazy="false">        
+            <key>
+                <column name="boardid" not-null="true"></column>
+            </key>
+            <one-to-many class="com.mycompany.Wordle.userdaten"/>
+        </set>
+    </class>
+</hibernate-mapping>

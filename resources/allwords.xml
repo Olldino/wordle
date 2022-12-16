@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mycompany.Wordle.allwords" table="allwords">
+        <id name="wortid" type="int">
+            <column name="WORTID" />
+            <generator class="increment" />
+        </id>
+        <property name="wörter" type="java.lang.String">
+                <column name="WÖRTER"/>
+        </property>
+        
+        <set name="allwordsSet" table="allwords" fetch="select" lazy="false">        
+            <key>
+                <column name="wortid" not-null="true"></column>
+            </key>
+            
+        </set>
+    </class>
+</hibernate-mapping>
